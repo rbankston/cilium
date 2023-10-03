@@ -33,4 +33,7 @@ spec:
     metricRelabelings:
     {{- toYaml . | nindent 4 }}
     {{- end }}
+{{- if .Values.hubble.metrics.serviceMonitor.jobLabel }}
+  jobLabel: {{ .Values.prometheus.serviceMonitor.jobLabel | quote }}
+{{- end }}
 {{- end }}

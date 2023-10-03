@@ -36,4 +36,7 @@ spec:
     {{- end }}
   targetLabels:
   - k8s-app
+{{- if .Values.prometheus.serviceMonitor.jobLabel }}
+  jobLabel: {{ .Values.prometheus.serviceMonitor.jobLabel | quote }}
+{{- end }}
 {{- end }}
